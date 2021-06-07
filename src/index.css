@@ -1,0 +1,59 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  overflow: hidden; /* Hide scrollbar */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+}
+.viewport-header {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  filter: blur(1px);
+}
+h1 {
+  color: #f6f8f0 !important;
+  font-family: "Buenard", serif;
+  font-weight: 700;
+  font-size: 6rem;
+  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906,
+    0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
+}
+h6 {
+  color: #f6f8f0 !important;
+  font-family: "Buenard", serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906,
+    0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
+}
+p {
+  color: #b0afac88;
+  font-family: "Buenard", serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+a {
+  color: #d2c8ae88 !important;
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  color: #fff3d588 !important;
+  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906,
+    0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
+  transition: 0.3s;
+}
