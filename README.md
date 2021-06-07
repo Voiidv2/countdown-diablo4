@@ -16,9 +16,9 @@
 
 ## About The Project
 
-![screenshot](https://example.com)
+![Countdown](d4release/images/screenshot.png?raw=true "Optional Title")
 
-About
+A simple countdown created to display the remaining time left until the release of Blizzard's Diablo IV.
 
 ### Built With
 
