@@ -18,7 +18,7 @@
 
 ![Countdown screenshot](/images/screenshot.png?raw=true "Diablo IV Countdown")
 
-A simple countdown created to display the remaining time left until the release of Blizzard's Diablo IV.
+A simple countdown created to display the remaining time left until the release of Blizzard Entertainment's Diablo IV.
 
 ### Built With
 
@@ -33,7 +33,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Npm is required in order to install react-spring which enables animations to render.
 
 - npm
 
@@ -57,3 +57,4 @@ This is an example of how to list things you need to use the software and how to
 ## Acknowledgements
 
 - [react-spring](https://react-spring.io/)
+- [Diablo IV](https://diablo4.blizzard.com/)
