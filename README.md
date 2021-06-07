@@ -1,8 +1,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Voiidv2/d4countdown">
+    <img src="images/logo.png" alt="Logo" width="88" height="48">
   </a>
   <h3 align="center">Diablo IV Countdown</h3>
   <p align="center">
