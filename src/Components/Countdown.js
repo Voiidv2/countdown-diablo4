@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 import Days from "./Days";
 import Hours from "./Hours";
 import Minutes from "./Minutes";
@@ -7,9 +7,7 @@ import Seconds from "./Seconds";
 
 const Countdown = () => {
   // Release date of Diablo IV
-  const releaseDate = Math.floor(
-    new Date("Jun 7, 2021 11:00:00").getTime() / 1000
-  );
+  const releaseDate = Math.floor(new Date("Jun 16, 2023 10:02:00").getTime() / 1000);
   // Get current time
   const now = Math.floor(new Date().getTime() / 1000);
   // Calculate the difference between the release date and current time and divide by 1000 to convert it to seconds
@@ -63,31 +61,15 @@ const Countdown = () => {
 
   return (
     <div className="row justify-content-center text-center">
-      {delta > 0 ? (
+      {delta < -1 ? (
         <h6 className="text-uppercase">Diablo IV has been released</h6>
       ) : (
-        <div>
-          {" "}
-          <Days
-            calcDays={calcDays}
-            calcHours={calcHours}
-            calcMinutes={calcMinutes}
-            calcSeconds={calcSeconds}
-            delta={delta}
-          />
-          <Hours
-            calcHours={calcHours}
-            calcMinutes={calcMinutes}
-            calcSeconds={calcSeconds}
-            delta={delta}
-          />
-          <Minutes
-            calcMinutes={calcMinutes}
-            calcSeconds={calcSeconds}
-            delta={delta}
-          />
+        <>
+          <Days calcDays={calcDays} calcHours={calcHours} calcMinutes={calcMinutes} calcSeconds={calcSeconds} delta={delta} />
+          <Hours calcHours={calcHours} calcMinutes={calcMinutes} calcSeconds={calcSeconds} delta={delta} />
+          <Minutes calcMinutes={calcMinutes} calcSeconds={calcSeconds} delta={delta} />
           <Seconds calcSeconds={calcSeconds} delta={delta} />
-        </div>
+        </>
       )}
     </div>
   );
