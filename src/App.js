@@ -1,6 +1,8 @@
 import Header from "./Components/Header";
 import Countdown from "./Components/Countdown";
 import Footer from "./Components/Footer";
+import Released from "./Components/Released";
+
 import { useSpring, animated, config } from "react-spring";
 
 function App() {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 const Countdown = () => {
-  const releaseDate = new Date("Jun 7, 2023 00:00:00").getTime();
+  const releaseDate = new Date("Jun 17, 2021 12:50:00").getTime();
   const now = new Date().getTime();
   const delta = releaseDate - now;
 
@@ -34,9 +34,9 @@ const Countdown = () => {
       }
     }, 1000);
   };
-
+  console.log(delta);
   useEffect(() => {
-    countdown("Jun 7, 2023 00:00:00");
+    countdown("Jun 17, 2021 12:50:00");
     return () => {
       clearInterval(interval.current);
     };
@@ -44,24 +44,33 @@ const Countdown = () => {
 
   return (
     <>
-      <div class="row align-items-center text-center text-uppercase">
-        <div class="col-sm">
-          <h1>{days}</h1>
-          <h6>Days</h6>
+      {" "}
+      {delta > 0 ? (
+        <div className="row align-items-center text-center text-uppercase">
+          <div className="col-sm">
+            <h1>{days}</h1>
+            <h6>Days</h6>
+          </div>
+          <div className="col-sm">
+            <h1>{hours}</h1>
+            <h6>Hours</h6>
+          </div>
+          <div className="col-sm">
+            <h1>{minutes}</h1>
+            <h6>Minutes</h6>
+          </div>
+          <div className="col-sm">
+            <h1>{seconds}</h1>
+            <h6>Seconds</h6>
+          </div>
         </div>
-        <div class="col-sm">
-          <h1>{hours}</h1>
-          <h6>Hours</h6>
+      ) : (
+        <div className="row align-items-center text-center text-uppercase">
+          <div className="col-sm">
+            <h6>Diablo IV has been released</h6>
+          </div>
         </div>
-        <div class="col-sm">
-          <h1>{minutes}</h1>
-          <h6>Minutes</h6>
-        </div>
-        <div class="col-sm">
-          <h1>{seconds}</h1>
-          <h6>Seconds</h6>
-        </div>
-      </div>
+      )}
     </>
   );
 };
