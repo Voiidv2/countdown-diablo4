@@ -28,8 +28,7 @@ h1 {
   font-family: "Buenard", serif;
   font-weight: 700;
   font-size: 6rem;
-  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906,
-    0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
+  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906, 0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
 }
 h6 {
   color: #f6f8f0 !important;
@@ -37,8 +36,7 @@ h6 {
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 5px;
-  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906,
-    0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
+  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906, 0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
 }
 p {
   color: #b0afac88;
@@ -53,7 +51,6 @@ a {
 }
 a:hover {
   color: #fff3d588 !important;
-  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906,
-    0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
+  text-shadow: 0 0 4px rgb(142 64 16 / 80%), 0 0 6px #6f1906, 0 1px 1px rgb(0 0 0 / 60%), 0 0 4px rgb(0 0 0 / 60%);
   transition: 0.3s;
 }

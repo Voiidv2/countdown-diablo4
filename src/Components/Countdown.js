@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 
 const Countdown = () => {
-  const releaseDate = new Date("Jun 17, 2021 12:50:00").getTime();
+  const diablo = "Jun 18, 2023 12:50:00";
+  const releaseDate = new Date(diablo).getTime();
   const now = new Date().getTime();
   const delta = releaseDate - now;
 
@@ -36,7 +37,7 @@ const Countdown = () => {
   };
   console.log(delta);
   useEffect(() => {
-    countdown("Jun 17, 2021 12:50:00");
+    countdown(diablo);
     return () => {
       clearInterval(interval.current);
     };
