@@ -1,78 +1,68 @@
-import React, { useEffect, useState } from "react";
-import { useSpring, animated, config } from "react-spring";
-import Days from "./Days";
-import Hours from "./Hours";
-import Minutes from "./Minutes";
-import Seconds from "./Seconds";
+import React, { useEffect, useState, useRef } from "react";
 
 const Countdown = () => {
-  // Release date of Diablo IV
-  const releaseDate = Math.floor(new Date("Jun 16, 2023 10:02:00").getTime() / 1000);
-  // Get current time
-  const now = Math.floor(new Date().getTime() / 1000);
-  // Calculate the difference between the release date and current time and divide by 1000 to convert it to seconds
-  const delta = Math.floor(releaseDate - now);
+  const releaseDate = new Date("Jun 7, 2023 00:00:00").getTime();
+  const now = new Date().getTime();
+  const delta = releaseDate - now;
 
-  const calcDays = () => {
-    let days = Math.floor(timeLeft / (60 * 60 * 24));
-    return days;
-  };
-  console.log(delta);
-  const calcHours = () => {
-    let hours = Math.floor((timeLeft / (60 * 60)) % 24);
-    let splitHours = ("" + hours).split("");
-    if (splitHours.length < 2) {
-      splitHours.unshift("0");
-      return splitHours;
-    } else {
-      return splitHours;
-    }
-  };
+  const [days, setDays] = useState(Math.floor(delta / (1000 * 60 * 60 * 24)));
+  const [hours, setHours] = useState(Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+  const [minutes, setMinutes] = useState(Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60)));
+  const [seconds, setSeconds] = useState(Math.floor((delta % (1000 * 60)) / 1000));
 
-  const calcMinutes = () => {
-    let minutes = Math.floor((timeLeft / 60) % 60);
-    let splitMinutes = ("" + minutes).split("");
-    if (splitMinutes.length < 2) {
-      splitMinutes.unshift("0");
-      return splitMinutes;
-    } else {
-      return splitMinutes;
-    }
-  };
+  let interval = useRef();
 
-  const calcSeconds = () => {
-    let seconds = Math.floor(timeLeft % 60);
-    let splitSeconds = ("" + seconds).split("");
-    if (splitSeconds.length < 2) {
-      splitSeconds.unshift("0");
-      return splitSeconds;
-    } else {
-      return splitSeconds;
-    }
+  const countdown = (date) => {
+    const releaseDate = new Date(date).getTime();
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const delta = releaseDate - now;
+
+      const days = Math.floor(delta / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((delta % (1000 * 60)) / 1000);
+
+      if (delta < 0) {
+        clearInterval(interval.current);
+      } else {
+        setDays(days);
+        setHours(hours);
+        setMinutes(minutes);
+        setSeconds(seconds);
+      }
+    }, 1000);
   };
-  const [timeLeft, setTimeLeft] = useState(delta + 1);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft(delta);
-    }, 1000);
-    return () => clearInterval(interval);
+    countdown("Jun 7, 2023 00:00:00");
+    return () => {
+      clearInterval(interval.current);
+    };
   });
 
   return (
-    <div className="row justify-content-center text-center">
-      {delta < -1 ? (
-        <h6 className="text-uppercase">Diablo IV has been released</h6>
-      ) : (
-        <>
-          <Days calcDays={calcDays} calcHours={calcHours} calcMinutes={calcMinutes} calcSeconds={calcSeconds} delta={delta} />
-          <Hours calcHours={calcHours} calcMinutes={calcMinutes} calcSeconds={calcSeconds} delta={delta} />
-          <Minutes calcMinutes={calcMinutes} calcSeconds={calcSeconds} delta={delta} />
-          <Seconds calcSeconds={calcSeconds} delta={delta} />
-        </>
-      )}
-    </div>
+    <>
+      <div class="row align-items-center text-center text-uppercase">
+        <div class="col-sm">
+          <h1>{days}</h1>
+          <h6>Days</h6>
+        </div>
+        <div class="col-sm">
+          <h1>{hours}</h1>
+          <h6>Hours</h6>
+        </div>
+        <div class="col-sm">
+          <h1>{minutes}</h1>
+          <h6>Minutes</h6>
+        </div>
+        <div class="col-sm">
+          <h1>{seconds}</h1>
+          <h6>Seconds</h6>
+        </div>
+      </div>
+    </>
   );
 };
-
 export default Countdown;
