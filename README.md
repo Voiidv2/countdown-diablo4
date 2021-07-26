@@ -16,7 +16,7 @@
 
 ## About The Project
 
-![Countdown screenshot](/images/screenshot.png?raw=true "Diablo IV Countdown")
+[![Product Name Screen Shot][product-screenshot]](hhttps://github.com/Voiidv2/d4countdown)
 
 A simple countdown created to display the remaining time left until the release of Blizzard Entertainment's Diablo IV.
 
@@ -58,3 +58,5 @@ Npm is required in order to install react-spring which enables animations to ren
 
 - [react-spring](https://react-spring.io/)
 - [Diablo IV](https://diablo4.blizzard.com/)
+
+[product-screenshot]: images/screenshot.png
