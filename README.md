@@ -8,6 +8,7 @@
   <p align="center">
     A Countdown to the release of Diablo IV
     <br />
+      <a href="http://62.30.108.253:8080/">View Demo</a>
     <br />
   </p>
 </p>
@@ -16,7 +17,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](hhttps://github.com/Voiidv2/d4countdown)
+[![Product Name Screen Shot][product-screenshot]](http://62.30.108.253:8080/)
 
 A simple countdown created to display the remaining time left until the release of Blizzard Entertainment's Diablo IV.
 
