@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/Voiidv2/d4countdown">
+  <a href="https://github.com/danielolaszy/d4countdown">
     <img src="images/logo.png" alt="Logo" width="88" height="48">
   </a>
   <h3 align="center">Diablo IV Countdown</h3>
@@ -46,7 +46,7 @@ Npm is required in order to install react-spring which enables animations to ren
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Voiidv2/d4countdown.git
+   git clone https://github.com/danielolaszy/d4countdown.git
    ```
 2. Install NPM packages
    ```sh
